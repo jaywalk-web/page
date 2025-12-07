@@ -1,0 +1,5 @@
+backend:
+  name: github
+  repo: jaywalk-web/page
+  branch: main
+  token: YOUR_PERSONAL_ACCESS_TOKEN  # Add this line
