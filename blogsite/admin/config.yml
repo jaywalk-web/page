@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Pillar", name: "pillar", widget: "select", options: ["action", "community", "education"]}
+      - {label: "Read Time", name: "read_time", widget: "string", default: "5 min read"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Author"
+        name: "author"
+        widget: "object"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Avatar", name: "avatar", widget: "image"}
+          - {label: "Bio", name: "bio", widget: "text"}
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - {label: "Twitter", name: "twitter", widget: "string", required: false}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+              - {label: "Website", name: "website", widget: "string", required: false}
