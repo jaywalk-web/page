@@ -1,0 +1,6 @@
+# config.yml (committed)
+backend:
+  name: github
+  repo: jaywalk-web/page
+  branch: main
+  token: ${GITHUB_TOKEN}  # This gets replaced during build
